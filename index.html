@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Немного о тебе ♡</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Marck+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="stars" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <span>♡ Наша история</span>
+        <span id="page-number">01 / 05</span>
+    </header>
+
+    <!-- МУЗЫКАЛЬНЫЙ ПЛЕЕР -->
+
+<div class="music-player">
+
+    <audio id="background-music" loop preload="auto">
+        <source src="./music/Dama.mp3" type="audio/mpeg">
+        Твой браузер не поддерживает аудио.
+    </audio>
+
+    <button
+        id="music-toggle"
+        class="music-toggle"
+        aria-label="Включить музыку"
+        aria-pressed="false"
+        type="button"
+    >
+        <span id="music-icon">♫</span>
+    </button>
+
+    <div class="music-info">
+        <span class="music-label">МЕЛОДИЯ ДЛЯ ТЕБЯ</span>
+        <span id="music-status">Нажми, чтобы услышать ♡</span>
+    </div>
+
+    <div class="vinyl" id="vinyl">
+        <div class="vinyl-center">♡</div>
+    </div>
+
+</div>
+
+    <main>
+
+        <!-- ЭКРАН 1: ПРИВЕТСТВИЕ -->
+
+        <section class="screen hero active" id="screen-1">
+
+            <div class="moon"></div>
+
+            <div class="hero-content">
+                <span class="eyebrow">НЕБОЛЬШОЕ ПИСЬМО ДЛЯ ТЕБЯ</span>
+
+                <h1>
+                    Есть люди,
+
+                    которые делают
+
+                    мир <em>теплее.</em>
+                </h1>
+
+                <p class="hero-description">
+                    И мне захотелось оставить тебе
+                    кое-что особенное.
+                </p>
+
+                <button class="button" onclick="goToScreen(2)">
+                    У меня кое-что есть <span>→</span>
+                </button>
+
+                <div class="tiny-note">создано с теплом ♡</div>
+            </div>
+
+            <div class="hero-bottom">ЛИСТАЙ В СВОЁМ ТЕМПЕ</div>
+
+        </section>
+
+        <!-- ЭКРАН 2: КОНВЕРТ -->
+
+        <section class="screen paper" id="screen-2">
+
+            <div class="paper-content center">
+
+                <span class="eyebrow">ЛИЧНО ДЛЯ ТЕБЯ</span>
+
+                <h2>Несколько слов<br>от меня тебе</h2>
+
+                <p class="muted">
+                    Возможно, мы пока не сидели рядом,
+                    но мне уже есть что тебе сказать.
+                </p>
+
+                <button class="envelope" id="envelope"
+                        onclick="openLetter()"
+                        aria-label="Открыть письмо">
+
+                    <span class="envelope-back"></span>
+                    <span class="envelope-paper">Для тебя ♡</span>
+                    <span class="envelope-flap"></span>
+                    <span class="envelope-seal">♡</span>
+
+                </button>
+
+                <p class="handwritten" id="envelope-hint">
+                    Нажми на конверт, чтобы открыть
+                </p>
+
+                <button class="button dark-button hidden"
+                        id="continue-letter"
+                        onclick="goToScreen(3)">
+                    Прочитать письмо →
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ЭКРАН 3: ПИСЬМО -->
+
+        <section class="screen paper" id="screen-3">
+
+            <article class="letter">
+
+                <span class="eyebrow">ТО, ЧТО Я ХОТЕЛ СКАЗАТЬ</span>
+
+                <h2 class="handwritten letter-title">
+                    Моя хорошая,
+                </h2>
+
+                <p>
+                    Я долго думал, что можно оставить тебе
+                    на память. Что-то, что можно сохранить,
+                    открыть в любой день и немного улыбнуться.
+                </p>
+
+                <p>
+                    И понял, что хочу просто написать тебе
+                    то, что иногда трудно выразить обычными словами.
+                </p>
+
+                <p>
+                    Мне очень хочется однажды увидеть тебя
+                    не через экран, услышать твой голос рядом
+                    и провести с тобой время по-настоящему.
+                </p>
+
+                <p>
+                    Я не знаю, когда у нас получится встретиться.
+                    Впереди у меня армия, и пока не всё зависит
+                    от меня. Но я не хочу, чтобы это письмо
+                    звучало как прощание.
+                </p>
+
+                <p>
+                    Скорее, это маленькое напоминание:
+                    есть человек, которому хочется узнать тебя
+                    ещё ближе, увидеть твою улыбку и однажды
+                    создать с тобой воспоминания, а не только
+                    представлять их.
+                </p>
+
+                <p>
+                    Я не хочу обещать невозможного.
+                    Просто хочу быть искренним с тобой.
+                    Ты мне очень нравишься, и я рад,
+                    что ты появилась в моей жизни.
+                </p>
+
+                <p class="handwritten signature">
+                    Береги себя, ладно?
+                </p>
+
+                <button class="button dark-button"
+                        onclick="goToScreen(4)">
+                    Ещё кое-что для тебя →
+                </button>
+
+            </article>
+
+        </section>
+
+        <!-- ЭКРАН 4: ТАТАРСКИЕ ФРАЗЫ -->
+
+        <section class="screen night" id="screen-4">
+
+            <div class="night-content">
+
+                <span class="eyebrow">БЕРӘЗ ҖЫЛЫ СҮЗЛӘР</span>
+
+                <h2>Немного тепла<br>на другом языке</h2>
+
+                <div class="tatar-phrase">
+                    <p class="tatar">Син миңа бик кадерле.</p>
+                    <p class="translation">
+                        Ты мне очень дорога.
+                    </p>
+                </div>
+
+                <div class="tatar-phrase">
+                    <p class="tatar">Сине күрәсем килә.</p>
+                    <p class="translation">
+                        Мне хочется увидеть тебя.
+                    </p>
+                </div>
+
+                <div class="tatar-phrase">
+                    <p class="tatar">Үзеңне сакла, яме?</p>
+                    <p class="translation">
+                        Береги себя, хорошо?
+                    </p>
+                </div>
+
+                <div class="tatar-phrase">
+                    <p class="tatar">Бәлки, бер көнне...</p>
+                    <p class="translation">
+                        Может быть, однажды...
+                    </p>
+                </div>
+
+                <p class="handwritten tatar-note">
+                    Кайда гына булсам да, сиңа елмаю телим. ♡
+                </p>
+
+                <p class="translation">
+                    Где бы я ни был, я желаю тебе улыбаться.
+                </p>
+
+                <button class="button light-button"
+                        onclick="goToScreen(5)">
+                    Последняя страница
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ЭКРАН 5: ФИНАЛ -->
+
+        <section class="screen final-screen">
+
+            <div class="final-content">
+
+                <span class="eyebrow">И НАПОСЛЕДОК</span>
+
+                <h2>
+                    Пусть у нас будет своё
+                    <em>однажды.</em>
+                </h2>
+
+                <p>
+                    Без спешки. Без лишних обещаний.
+
+                    Просто шанс однажды встретиться
+
+                    и узнать, что ждёт нас впереди.
+
+                    С теплом, от человека, который хочет тебя увидеть.
+                </p>
+
+                <p class="handwritten final-signature">
+                    Это письмо — маленькая частичка меня.
+                </p>
+
+                <p class="small-note">
+                    Если однажды захочешь перечитать —
+                    я буду рад, что ты снова открыла его.
+                </p>
+
+                <button class="button"
+                        onclick="goToScreen(1)">
+                    Прочитать ещё раз
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
